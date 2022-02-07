@@ -1,30 +1,55 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="d-flex">
+  <Sidebar />
+    <div class="page-content">
+      <router-view/>
+    </div>
   </div>
-  <router-view/>
 </template>
+<script>
+import Sidebar from "@/components/Sidebar";
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    Sidebar
   }
 }
+</script>
+<style lang="scss">
+@font-face {
+  font-family: 'Golos';
+  src: url('~@/assets/fonts/golos/Golos-Text_Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Golos';
+  src: url('~@/assets/fonts/golos/Golos-Text_VF.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Golos';
+  src: url('~@/assets/fonts/golos/Golos-Text_Bold.ttf') format('ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+body {
+  font-family: Golos;
+  padding: 0;
+  margin: 0;
+}
+#app {
+  background: #091F52;
+
+  .page-content {
+    width: 100%;
+    border-top-left-radius: 50px;
+    padding: 40px;
+    background: #fff;
+  }
+}
+
+
+
 </style>
